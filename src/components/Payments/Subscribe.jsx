@@ -25,9 +25,7 @@ const Subscribe = ({ user }) => {
     const { error: courseError } = useSelector(state => state.course);
 
     const subscribeHandler = async () => {
-        const {
-        data: { key },
-        } = await axios.get(`${server}/razorpaykey`);
+        const {data:{ key }} = await axios.get(`${server}/razorpaykey`);
 
         setKey(key);
         dispatch(buySubscription());
